@@ -7,6 +7,8 @@ public class Player : MonoBehaviour {
 
     CharacterController controller;
 
+    float playerLife = 100;
+
     [SerializeField]
     float speed = 5f, gravity = 3, jump = 15, yvel = 0;
     bool djump = true;
@@ -55,6 +57,12 @@ public class Player : MonoBehaviour {
 
         vel.y = yvel;
         controller.Move(vel * Time.deltaTime);
+    }
+
+    public void PlayerDamage(float damage) {
+
+        playerLife -= damage; 
+
     }
 
     private void OnTriggerEnter(Collider other) {
