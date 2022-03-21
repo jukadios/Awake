@@ -87,3 +87,11 @@ Received Import Request.
 Start importing Assets/Prefab/Proyectile.prefab using Guid(bbaf2e97f7d5b3d4b9e52328d0eddff7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35468ebb0f64d2fce88bd69a853a8fb1') in 0.171917 seconds 
   Import took 0.176137 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 785.381640 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebf33bab1345fb0bdf54fc11b53e2adf') in 0.015168 seconds 
+  Import took 0.020113 seconds .
+
