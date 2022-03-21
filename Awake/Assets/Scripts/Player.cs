@@ -3,27 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
 
     CharacterController controller;
 
-    float playerLife = 100;
+    float playerLifeBar = 100;
+    int playerLifes = 3;
 
     [SerializeField]
     float speed = 5f, gravity = 3, jump = 15, yvel = 0;
     bool djump = true;
 
-    void Start() {
+    void Start()
+    {
         controller = GetComponent<CharacterController>();
         transform.position = new Vector2(0f, 0f);
     }
 
-    void Update() {
+    void Update()
+    {
         //MovementTpoDown();
         MovementLateral();
     }
 
-    void MovementTpoDown() {
+    void MovementTpoDown()
+    {
 
         float hor = Input.GetAxis("Horizontal");
         float vert = Input.GetAxis("Vertical");
@@ -34,21 +39,26 @@ public class Player : MonoBehaviour {
         controller.Move(vel * Time.deltaTime);
     }
 
-    void MovementLateral() {
+    void MovementLateral()
+    {
         float hor = Input.GetAxis("Horizontal");
         float vert = Input.GetAxis("Vertical");
 
         Vector3 dir = new Vector3(hor, vert, 0);
         Vector3 vel = dir * speed;
 
-        if (controller.isGrounded == true) {
-            if (Input.GetKeyDown(KeyCode.Space)) {
+        if (controller.isGrounded == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
                 yvel = jump;
                 djump = true;
             }
         }
-        else {
-            if (djump && Input.GetKeyDown(KeyCode.Space)) {
+        else
+        {
+            if (djump && Input.GetKeyDown(KeyCode.Space))
+            {
                 yvel = jump * 1.5f;
                 djump = false;
             }
@@ -59,15 +69,30 @@ public class Player : MonoBehaviour {
         controller.Move(vel * Time.deltaTime);
     }
 
-    public void PlayerDamage(float damage) {
+    public void PlayerDamage(float damage)
+    {
 
-        playerLife -= damage; 
+        if (playerLifeBar <= 0 && playerLifes == 0)
+        {
+            Debug.Log("Game Over");
+        }
+        else if (playerLifeBar <= 0)
+        {
+            playerLifeBar = 100;
+            playerLifes -= 1;
+        }
+        else
+        {
+            playerLifeBar -= damage;
+            Debug.Log("Player life: " + playerLifeBar);
+        }
 
     }
 
-    private void OnTriggerEnter(Collider other) {
-        
+    private void OnTriggerEnter(Collider other)
+    {
 
-        
+
+
     }
 }
