@@ -14,20 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - .collabignore
     - Assets/Animations.meta
+    - Assets/Prefab.meta
+    - Assets/Prefab/Proyectile.prefab
+    - Assets/Prefab/Proyectile.prefab.meta
     - Assets/Scenes.meta
     - Assets/Scenes/SampleScene.unity
+    - Assets/Scenes/SampleScene.unity.meta
     - Assets/Scripts.meta
     - Assets/Scripts/Enemy.cs
     - Assets/Scripts/Enemy.cs.meta
-    - Assets/Scripts/EnemyActions.cs
-    - Assets/Scripts/EnemyActions.cs.meta
     - Assets/Scripts/Player.cs
     - Assets/Scripts/Player.cs.meta
+    - Assets/Scripts/Proyectile.cs
+    - Assets/Scripts/Proyectile.cs.meta
     - Assets/Sprites.meta
+    - ProjectSettings/UnityConnectSettings.asset
     - 
-    m_Values: 01010101010101010101010101
+    m_Values: 0000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
