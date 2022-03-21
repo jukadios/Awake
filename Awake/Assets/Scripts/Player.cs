@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
     CharacterController controller;
+
+    float playerLifeBar = 100;
+    int playerLifes = 3;
 
     [SerializeField]
     float speed = 5f, gravity = 3, jump = 15, yvel = 0;
@@ -54,5 +58,27 @@ public class Player : MonoBehaviour {
 
         vel.y = yvel;
         controller.Move(vel * Time.deltaTime);
+    }
+
+    public void PlayerDamage(float damage) {
+        
+        if(playerLifeBar <= 0 && playerLifes == 0) {
+            Debug.Log("Game Over");
+        }
+        else if (playerLifeBar <= 0) {
+            playerLifeBar = 100;
+            playerLifes -= 1;
+        }
+        else {
+            playerLifeBar -= damage;
+            Debug.Log("Player life: " + playerLifeBar);
+        }
+
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        
+
+        
     }
 }
