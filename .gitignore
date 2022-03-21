@@ -62,3 +62,7 @@ crashlytics-build.properties
 *.json
 *.txt
 Awake/Temp/UnityLockfile
+Awake/Library/ArtifactDB-lock
+Awake/Library/SourceAssetDB-lock
+Awake/Logs/AssetImportWorker0.log
+Awake/Library/ArtifactDB
