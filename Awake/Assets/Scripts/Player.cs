@@ -8,8 +8,8 @@ public class Player : MonoBehaviour
 
     CharacterController controller;
 
-    float playerLifeBar = 100;
-    int playerLifes = 3;
+    float playerLifeBar = 10;
+    int playerLifes = 0;
 
     [SerializeField]
     float speed = 5f, gravity = 3, jump = 15, yvel = 0;
