@@ -23,20 +23,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        //MovementTpoDown();
         MovementLateral();
-    }
-
-    void MovementTpoDown()
-    {
-
-        float hor = Input.GetAxis("Horizontal");
-        float vert = Input.GetAxis("Vertical");
-
-        Vector3 dir = new Vector3(hor, vert, 0);
-        Vector3 vel = dir * speed;
-
-        controller.Move(vel * Time.deltaTime);
     }
 
     void MovementLateral()
